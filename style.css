@@ -1057,9 +1057,13 @@ body {
   text-shadow: 0 0 1.5vmin rgba(255, 123, 174, 0.8);
 }
 
-.happy-woman-day span {
+.signature {
+  position: fixed;
+  right: clamp(1.25rem, 4vw, 4rem);
+  bottom: clamp(1.25rem, 4vw, 3rem);
+  z-index: 35;
   display: block;
-  margin: 1.1rem auto 0;
+  margin: 0;
   font-family: "Trebuchet MS", Arial, sans-serif;
   font-size: clamp(0.9rem, 1.8vw, 1.35rem);
   font-weight: 600;
@@ -1070,14 +1074,8 @@ body {
   text-shadow: 0 0 1vmin rgba(255, 123, 174, 0.65);
 }
 
-.happy-woman-day span::before {
-  content: "";
-  display: block;
-  width: clamp(3rem, 10vw, 6rem);
-  height: 1px;
-  margin: 0 auto 0.9rem;
-  background: #ff8fb9;
-  box-shadow: 0 0 0.8rem rgba(255, 143, 185, 0.8);
+.signature::before {
+  display: none;
 }
 
 @media (max-width: 480px) {
@@ -1087,8 +1085,9 @@ body {
     font-size: clamp(1.75rem, 9vw, 2.5rem);
   }
 
-  .happy-woman-day span {
-    margin-top: 0.9rem;
+  .signature {
+    right: 1rem;
+    bottom: 1rem;
     font-size: 0.78rem;
     letter-spacing: 0.12em;
   }
