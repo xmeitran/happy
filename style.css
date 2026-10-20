@@ -15,6 +15,7 @@ body {
   align-items: flex-end;
   justify-content: center;
   min-height: 100vh;
+  min-height: 100svh;
   background-color: var(--dark-color);
   overflow: hidden;
   perspective: 1000px;
@@ -1057,6 +1058,15 @@ body {
   text-shadow: 0 0 1.5vmin rgba(255, 123, 174, 0.8);
 }
 
+.happy-woman-day .greeting,
+.happy-woman-day .date {
+  display: block;
+}
+
+.happy-woman-day .date {
+  margin-top: 0.15em;
+}
+
 .signature {
   position: fixed;
   right: clamp(1.25rem, 4vw, 4rem);
@@ -1079,16 +1089,17 @@ body {
 
 @media (max-width: 480px) {
   .happy-woman-day {
-    top: 2.5rem;
+    top: max(2.5rem, env(safe-area-inset-top));
     padding: 0 0.75rem;
-    font-size: clamp(1.75rem, 9vw, 2.5rem);
+    font-size: clamp(1.65rem, 8.2vw, 2.5rem);
+    line-height: 1.08;
   }
 
   .signature {
     right: 1rem;
-    bottom: 1rem;
-    font-size: 0.78rem;
-    letter-spacing: 0.12em;
+    bottom: max(4.75rem, calc(env(safe-area-inset-bottom) + 3.5rem));
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
   }
 }
 
